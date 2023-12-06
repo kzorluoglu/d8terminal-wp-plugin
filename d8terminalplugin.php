@@ -1,17 +1,17 @@
 <?php
 /*
- * Plugin Name: D8 Linux Terminal Plugin
- * Plugin URI: http://d8devs.com/d8-linux-terminal-wordpress-plugin
- * Update URI: http://d8devs.com/d8-linux-terminal-wordpress-plugin
+ * Plugin Name: D8 Linux Terminal Widget
+ * Plugin URI: http://d8devs.com/d8-linux-terminal-wordpress-widget
+ * Update URI: http://d8devs.com/d8-linux-terminal-wordpress-widget
  * Author: d8devs
  * Author URI: http://d8devs.com
- * Description: A terminal widget WordPress plugin.
+ * Description: A terminal widget WordPress Widget.
  * Version: 1.0
  * Requires at least: 7.4
  * Requires PHP:      7.4
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: d8-linux-terminal-plugin
+ * Text Domain: d8-linux-terminal-widget
 */
 
 // Security check to ensure the file is being called from within WordPress.
@@ -23,9 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue plugin scripts and styles.
  */
-function my_terminal_enqueue_scripts() {
-	wp_enqueue_script( 'my-terminal-script', plugin_dir_url( __FILE__ ) . 'js/script.js', [], '1.0.0', true );
-	wp_enqueue_style( 'my-terminal-style', plugin_dir_url( __FILE__ ) . 'css/style.css', [], '1.0.0', 'all' );
+function d8_terminal_enqueue_scripts() {
+	wp_enqueue_script( 'd8-terminal-script', plugin_dir_url( __FILE__ ) . 'js/script.js', [], '1.0.0', true );
+	wp_enqueue_style( 'd8-terminal-style', plugin_dir_url( __FILE__ ) . 'css/style.css', [], '1.0.0', 'all' );
 
 	// Localize the script with new data
 	$script_data = array(
@@ -38,10 +38,10 @@ function my_terminal_enqueue_scripts() {
 		'ipAddress'       => $_SERVER['REMOTE_ADDR'] ?? '',
 		'requestTime'     => $_SERVER['REQUEST_TIME'] ?? '',
 	);
-	wp_localize_script( 'my-terminal-script', 'wpData', $script_data );
+	wp_localize_script( 'd8-terminal-script', 'wpData', $script_data );
 }
 
-add_action( 'wp_enqueue_scripts', 'my_terminal_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'd8_terminal_enqueue_scripts' );
 
 function render_terminal_html() {
 	?>

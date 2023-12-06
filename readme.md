@@ -1,4 +1,4 @@
-# D8 Linux Terminal Plugin
+# D8 Linux Terminal Widget
 
 The D8 Linux Terminal Plugin adds a unique terminal-like interface to your WordPress website, providing an interactive command-line experience.
 
