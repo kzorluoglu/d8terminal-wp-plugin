@@ -7,7 +7,7 @@
  * Author URI: http://d8devs.com
  * Description: A terminal widget WordPress Widget.
  * Version: 1.0
- * Requires at least: 8.0
+ * Requires at least: 6.0
  * Requires PHP:      8.0
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
